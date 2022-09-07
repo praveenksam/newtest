@@ -16,6 +16,16 @@ const mainViz = {
   vizUrl: null,
 };
 
+const slideViz = {
+  viz: null,
+  workbook: null,
+  activeSheet: null,
+  activeFilterSheet: null,
+  url: "licenseplates/LicensePlates",
+  elemId: "slideViz",
+  vizUrl: null,
+};
+
 // Viz loading and manipulating functions
 function initViz(elem) {
   console.log(`Entering initViz for ${elem.elemId}...`);
@@ -131,6 +141,8 @@ function downloadDialog(elem) {
 function refreshData(elem) {
   elem.viz.refreshDataAsync();
 }
-
-loadViz(mainViz);
 console.log("In JS file");
+console.log("Loading mainViz");
+loadViz(mainViz);
+console.log("Loading slideViz");
+loadViz(slideViz);
